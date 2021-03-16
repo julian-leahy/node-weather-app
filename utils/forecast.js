@@ -5,13 +5,13 @@ const forecast = (lat, lon, callback) => {
 
     const query = `${lat},${lon}`;
     const url = `http://api.weatherstack.com/current?access_key=${KEYS.WEATHER_API_KEY}&query=${query}`;
-    request({ url: url, json: true }, (error, response) => {
+    request({ url, json: true }, (error, { success, body }) => {
         if (error) {
             callback('Could not reach weather services', undefined);
-        } else if (response.success === false) {
+        } else if (success === false) {
             callback('Could not find location', undefined);
         } else {
-            callback(undefined, response.body.current)
+            callback(undefined, body.current)
         }
     })
 }
