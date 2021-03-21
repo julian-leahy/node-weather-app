@@ -42,6 +42,13 @@ app.get('/weather', (req, res) => {
     });
 })
 
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: '404 Page',
+        message: 'Page not found'
+    });
+})
+
 
 
 app.listen('3000', () => {
