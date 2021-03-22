@@ -6,8 +6,25 @@
 <body>
     <div class="container">
         {{>header}}
+        <main>
+            <div class="search">
+                <input type="text" placeholder="Address" id="address">
+                <button id="search">Search</button>
+            </div>
+            <div class="weather-report">
+                <div class="spinner" id="loading">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <h1 class="title" id="title">6 Ironside Road, Johnsonville, Wellington 6037, New Zealand</h1>
+                <p class="forecast" id="forecast">It is currently 15 degress and partly cloudy. There is a 0% chance of
+                    rain.</p>
+            </div>
+        </main>
         {{>footer}}
     </div>
+    <script src="js/client-app.js"></script>
 </body>
 
 </html>
